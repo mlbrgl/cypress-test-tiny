@@ -4,8 +4,9 @@ describe('page', () => {
   //   cy.visit('https://example.cypress.io')
   // })
   it('fails', () => {
-    cy.visit('https://ourworldindata.org/polio')
-    // cy.wait(5000) // no effect
-    cy.contains('here').click() // error: CypressError: Timed out retrying: Constructor is not a constructor
+    // launch local server with npx http-server to serve files in /public
+    cy.visit('http://127.0.0.1:8080/page1.html')
+    // cy.wait(500)
+    cy.contains('Page 2').click() // error: CypressError: Timed out retrying: Constructor is not a constructor
   })
 })
